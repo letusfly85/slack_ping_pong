@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    volumes:
+      - $HOME/work/docker/postgresql/phoenix_slack_ping_pong:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
